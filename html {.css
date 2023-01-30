@@ -1,0 +1,484 @@
+html {
+    background-color: #020659;
+}
+
+body {
+    width: 375px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+
+#nav-list {
+    list-style-type: none;
+    text-decoration: none;
+    display: grid;
+    position: absolute;
+    background-color: #2104d9;
+    width: 375px;
+    z-index: 3;
+    padding: 0;
+    top: 45px;
+    transform: translateY(-280px);
+    transition: .6s;
+}
+
+.nav-item {
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    background-color: #590242;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+}
+
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span:before {
+    top: 5px;
+}
+
+label span:after {
+    top: -5px;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ #nav-list {
+    transform: translateY(0);
+}
+
+input:checked ~ label span {
+    background: transparent;
+}
+
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+h1 {
+    color: #ffffff;
+    background-color: #030a8c;
+    font-variant: small-caps;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    width: 345px;
+    margin: 0;
+    display: inline-block;
+}
+
+h1 a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1:hover {
+    background-color: #590242;
+}
+
+#intro {
+    padding: 5px 25px 15px 25px;
+    background-image: linear-gradient(to right, #2104d9 , #000000);
+    color: #ffffff;
+}
+
+h2 {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+p {
+    font-size: 12pt;
+}
+
+#intro p {
+    line-height: 14pt;
+}
+
+h3 {
+    color: #590242;
+    text-transform: uppercase;
+    font-size: 14pt;
+    font-weight: bold;
+    padding-left: 25px;
+    display: inline-block;
+}
+
+h4 {
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#trending h4 {
+    color: #590242;
+    margin: 0;
+}
+
+#trending {
+    margin: 0 0 0 10px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#trending section {
+    margin-right: 20px;
+    margin-top: -65px;
+    margin-bottom: -50px;
+    max-width: 311px;
+}
+
+#trending section:last-of-type {
+    margin-right: 0;
+}
+
+#trending section img {
+    position: relative;
+}
+
+#trending section audio {
+    position: relative;
+    top: -215px;
+    left: 5px;
+}
+
+#trending h4, dl {
+    position: relative;
+    z-index: 2;
+    padding: 10px 0 10px 10px;
+    margin: 0;
+    top: 311px;
+    left: 0px;
+    background-color: rgba(255,255,255,.8);
+}
+
+#trending h4 {
+    padding-bottom: 0;
+    width: 301px;
+}
+
+.scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+dl {
+    color: #590242;
+    max-width: 301px;
+    margin: 0;
+}
+
+dt {
+    font-style: italic;
+    display: inline;
+    margin: 0;
+    padding-right: 10px;
+}
+
+dd {
+    display: inline;
+    margin: 0; 
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #ffffff;
+    border-radius: 100%;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: #ffffff;
+    border-radius: 100%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255,255,255,.5);
+}
+
+button {
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 7px 30px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #590242;
+    font-size: 12pt;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #020659;
+}
+
+#playlists {
+    color: #ffffff;
+    background-color: #2699fb;
+    padding: 10px;
+    display: flex;
+    overflow: auto;
+}
+
+#playlists > section {
+    background-color: #0d8dfb;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#playlists section:last-of-type {
+    margin-right: 0;
+}
+
+#playlists section:hover, #curated section:hover {
+    background-color: #590242;
+}
+
+#curated {
+    color: #ffffff;
+    background-color: #030a8c;
+    padding: 10px;
+    display: flex;
+    overflow: auto;
+}
+
+#curated section {
+    background-color: #020873;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#curated section:last-of-type {
+    margin-right: 0;
+}
+
+#trending::-webkit-scrollbar {
+    width: 15px;
+}
+
+#trending::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+}
+
+#trending::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+
+#trending::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+
+#playlists::-webkit-scrollbar, #curated::-webkit-scrollbar {
+    width: 15px;
+}
+
+#playlists::-webkit-scrollbar-track, #curated::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+
+#playlists::-webkit-scrollbar-thumb, #curated::-webkit-scrollbar-thumb {
+    background: #020659;
+    border-radius: 5px;
+}
+
+#playlists::-webkit-scrollbar-thumb:hover, #curated::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+footer p {
+    font-size: 10pt;
+    text-align: center;
+    padding-bottom: 25px;
+    color: #590242;
+}
+
+@media screen and (min-width: 834px) {
+    
+    body {
+        width: 834px;
+    }
+
+    h1 {
+        text-align: left;
+        padding-left: 15px;
+        width: 804px;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: none;
+    }
+
+    #nav-list {
+        list-style-type: none;
+        text-decoration: none;
+        display: flex;
+        position: absolute;
+        top: 0;
+        padding: 0;
+        float: right;
+        justify-content: space-between;
+        color: #ffffff;
+        background-color: transparent;
+        width: 375px;
+        transform: none;
+        transition: none;
+    }
+    
+    .nav-item {
+        text-align: center;
+        padding: 0 75px 0 0;
+        text-transform: uppercase;
+        width: 75px;
+        text-decoration: none;
+    }
+
+    .nav-item:hover {
+        background-color: transparent;
+    }
+
+    .nav-item:first-of-type {
+        margin-left: 300px;
+    }
+
+    .nav-link:hover {
+        color: #590242;
+    }
+
+    main {
+        clear: both;
+    }
+
+    main > section {
+        margin: 0;
+    }
+
+    #trending {
+        width: 818px;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    button {
+        margin-left: 650px;
+    }
+
+    #lowerSections {
+        display: flex;
+    }
+
+    #playlists {
+        background-color: #2699fb;
+        margin: 0;
+    }
+
+    #allPlaylists {
+        margin-left: 230px;
+    }
+
+    #curated {
+        background-color: #030a8c;
+    }
+
+    #moreCurated {
+        margin-left: 255px;
+    }
+
+    #playlists, #curated {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        width: 397px;
+        height: 445px;
+        overflow-x: auto;
+        overflow-y: scroll;
+    }
+
+    #playlists > section, #curated > section {
+        margin: 5px 0;
+        padding-left: 0;
+    }
+
+    #playlists > section:first-of-type, #curated > section:first-of-type {
+        margin-top: 0;
+    }
+
+    #playlists > section:last-of-type, #curated > section:last-of-type {
+        margin-bottom: 0;
+    }
+
+    #playlists > section img, #curated > section img {
+        float: left;
+        margin: 0 0 0 10px;
+    }
+
+    #playlists > section h4, #curated > section h4 {
+        margin: 0;
+        clear: both;
+    }
+
+    #playlists > section p, #curated > section p {
+        padding: 5px 5px 0 170px;
+        margin-top: 10px;
+    }
+
+}

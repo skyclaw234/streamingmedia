@@ -1,0 +1,326 @@
+/* Mobile */
+html {
+    background-color: #020659;
+}
+body {
+    width: 375px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* TEXT */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+}
+dl, dd{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+h1 {
+    font-size: 1.25em;
+    line-height: 2em;
+}
+h2, h3 {
+    font-size: 1em;
+    color: #590242;
+    line-height: 1.2em;
+}
+h3 {
+    margin: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+header p, h1, h2 {
+    padding: 0 25px 0 25px;
+}
+header p {
+    color: #ffffff;
+    line-height: 1.25em;
+}
+#trending h3 {
+    font-weight: bold;
+    line-height: 25px;
+    color: #590242;
+}
+dt {
+    color: #590242;
+}
+dd {
+    color: #590242;
+}
+#playlists h3, #playlists p, #curated h3, #curated p {
+    text-align: center;
+    padding: 5px;
+}
+#playlists section a, #curated section a {
+    text-decoration: none;
+    color: #ffffff;
+}
+p, dl, dd {
+    font-size: 1em;   
+}
+footer p {
+    font-size: .75em;
+    color:#590242;
+    text-align: center;
+    padding: 15px;
+}
+
+/*Header*/
+header {
+    margin-top: 60px;
+    padding-bottom: 2px;
+    background: linear-gradient(to right, #2104D9, #000000);
+}
+
+/*Nav*/
+nav {
+    width: 375px;
+    background-color: #030A8C;
+    position: absolute;
+    top: 0;
+    z-index:1;
+    text-transform: uppercase;
+}
+nav ul {
+    text-align: center;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #2104D9;
+    max-height: 0;
+    transition: .2s ease-out;
+}
+li a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: #ffffff;
+}
+[href="#home"] {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: 85px;
+}
+a:hover, input:hover {
+    background-color: #590242;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 29px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 20px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+#trending {
+    background-color: #ffffff;
+}
+#playlists .scroll {
+    background-color: #2699FB;
+}
+#curated .scroll {
+    background-color: #030A8C;
+}
+#playlists section {
+    background-color: #0d8dfb;
+    padding: 10px;
+}
+#playlists section:hover, #curated section:hover {
+    background-color: #590242;
+}
+#curated section {
+    background-color: #020873;
+    padding: 10px;
+}
+
+/*scroll*/
+.scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.scroll section {
+    margin:10px;
+    position: relative;
+}
+.scroll div {
+    position: absolute;
+    top:251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+dl {
+    display:flex;
+}
+dt {
+    padding-right: 5px;
+}
+audio {
+    position: absolute;
+    bottom: 150px;
+    left:5px;
+}
+.etc {
+    text-decoration: none;
+    background-color: #590242;
+    color: #ffffff;
+    border-radius: 5px;
+    padding:10px;
+    width: 150px;
+    display: block;
+    text-align: center;
+    margin: 10px 0 30px 32px;
+}
+.etc:hover {
+    background-color: #020659;
+}
+audio::-webkit-media-controls-mute-button {
+    background-color:#ffffff;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button {
+    background-color:#ffffff;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color:rgba(255, 255, 255,.5);
+}
+#trending ::-webkit-scrollbar {
+    width: 15px;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242; 
+}
+#trending ::-webkit-scrollbar-thumb {
+    background:#590242; 
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: #020659; 
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659; 
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background:#020659; 
+    border-radius: 5px;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; 
+}
+
+/*Desktop*/
+@media screen and (min-width:834px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    body {
+        width: 834px;
+    }
+    nav {
+        width: 834px;
+    }
+    ul {
+        top: 0;
+        overflow: visible;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    li a {
+        padding: 10px;
+    }
+    [href="#home"] {
+        position: static;
+    }
+    a:hover, input:hover {
+        background-color: #590242;
+    }
+    label span, input {
+        display: none;
+    }
+    #playlists, #curated {
+        width: 417px;
+        clear: both;
+    }
+    .etc {
+        float:right;
+        margin-right: 10px;
+    }
+    #playlists .scroll, #curated .scroll {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(5, 1fr);
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 500px;
+    }
+    #playlists img, #curated img {
+        float: left;
+    }
+    #trending {
+        height: auto;
+        grid-column: 1/3;
+    }
+}
